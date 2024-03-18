@@ -14,7 +14,8 @@ class ComicCrudController extends Controller
      */
     public function index()
     {
-        //
+        $comics = Comic::all();
+        return view('backend.comics.index', compact('comics'));
     }
 
     /**
@@ -22,7 +23,7 @@ class ComicCrudController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.comics.create');
     }
 
     /**
@@ -30,7 +31,19 @@ class ComicCrudController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comic = new Comic();
+
+            $comic->title = $request->input('title');
+            $comic->description = $request->input('description');
+            $comic->thumb = $request->input('thumb');
+            $comic->price = $request->input('price');
+            $comic->series = $request->input('series');
+            $comic->sale_date = $request->input('sale_date');
+            $comic->type = $request->input('type');
+
+        $comic->save();
+
+        return redirect()->route('comics.index')->with('success', 'Comic created successfully.');
     }
 
     /**
