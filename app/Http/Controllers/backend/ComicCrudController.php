@@ -15,7 +15,7 @@ class ComicCrudController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        return view('backend.comics.index', compact('comics'));
+        return view('pages.ComicsViews.index', compact('comics'));
     }
 
     /**

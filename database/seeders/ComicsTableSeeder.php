@@ -13,10 +13,22 @@ class ComicsTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $comicsData = include(resource_path('data/comics.php'));
+        // $comicsData = include(resource_path('data/comics.php'));
 
-        foreach ($comicsData as $comicData) {
-            Comic::create($comicData);
+        foreach($comics as $item){
+            $newComic = new Comic();
+
+            $newComic->id = $item['id'];
+            $newComic->title = $item['title'];
+            $newComic->description = $item['description'];
+            $newComic->thumb = $item['thumb'];
+            $newComic->price = $item['price'];
+            $newComic->series = $item['series'];
+            $newComic->sale_date = $item['sale_date'];
+            $newComic->type = $item['type'];
+
+            $newComic->save();
+
         }
     }
 }
