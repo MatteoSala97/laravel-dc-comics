@@ -23,7 +23,7 @@ class ComicCrudController extends Controller
      */
     public function create()
     {
-        return view('pages.comics.create');
+        return view('pages.ComicsViews.create');
     }
 
     /**

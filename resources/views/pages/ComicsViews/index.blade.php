@@ -46,8 +46,6 @@
                 <div class="card-info">
                     <h2 class="text-lignt fw-bold">{{$element->title}}</h2>
                     <p class="text-lignt fw-bold">Price: {{ $element->price }}</p>
-                    {{-- <p class="text-lignt fw-bold">Series: {{$element->series}}</p> --}}
-                    {{-- <p class="text-lignt fw-bold">Type: {{ $element->description }}</p> --}}
                 </div>
             </div>
             @endforeach
@@ -55,7 +53,7 @@
 
         </div>
 
-        <div id="create-more">Create a new comic</div>
+        <a id="create-more" class="text-decoration-none" href="{{ route('comics.create') }}">Create a new comic</a>
     </main>
 
 
