@@ -39,8 +39,10 @@
     <main>
         <div class="card-container pt-5">
             @foreach($comics as $element)
-            <div class="card-comic col-3">
-                <img class="card-img-top" src="{{$element->thumb}}" alt="{{$element->title}}"/>
+            <div class="card-comic">
+                <a href="{{ route('comics.show', $element->id) }}">
+                    <img class="card-img-top" src="{{$element->thumb}}" alt="{{$element->title}}"/>
+                </a>
                 <div class="card-info">
                     <h2 class="text-lignt fw-bold">{{$element->title}}</h2>
                     <p class="text-lignt fw-bold">Price: {{ $element->price }}</p>
@@ -52,7 +54,6 @@
 
 
         </div>
-
 
         <div id="create-more">Create a new comic</div>
     </main>
