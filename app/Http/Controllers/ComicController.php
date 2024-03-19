@@ -14,3 +14,6 @@ class ComicController extends Controller
        return view(('pages.welcome'), compact('comics'));
     }
 }
+
+
+// not needed :p

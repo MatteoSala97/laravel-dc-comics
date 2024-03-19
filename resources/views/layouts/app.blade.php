@@ -21,9 +21,7 @@
 
     @include('partials.header')
 
-    <main>
-        @yield('main')
-    </main>
+    @yield('main')
 
     @include('partials.footer')
 

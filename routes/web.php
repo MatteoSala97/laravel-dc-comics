@@ -18,7 +18,3 @@ use App\Http\Controllers\backend\ComicCrudController;
 Route::get('/', [ComicController::class, 'index' ])->name('HomePage');
 
 Route::resource('comics', ComicCrudController::class);
-
-Route::get('/comics/{id}', [ComicCrudController::class, 'show'])->name('comics.show');
-
-Route::get('/comics/create', [ComicCrudController::class, 'create'])->name('comics.create');

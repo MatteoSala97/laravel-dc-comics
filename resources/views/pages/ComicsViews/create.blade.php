@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 
-@section('content', 'Dc Comics | Create a comic')
+@section('title', 'Dc Comics | Create a comic')
 
-@section('content')
+@section('main')
 
     <main>
         {{-- form con
@@ -20,8 +20,8 @@
 
 
             --}}
-            
-            <div class="container">
+
+            <div class="container text-light p-5">
                 <h1>Create a new comic</h1>
 
                 <form action ="{{ route('comics.store') }}" method="POST">
@@ -50,6 +50,11 @@
                     <div class="mb-3">
                         <label for="series" class="form-label">Series</label>
                         <input type="text" class="form-control" id="series" name="series">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="type" class="form-label">Type</label>
+                        <input type="text" class="form-control" id="type" name="type">
                     </div>
 
                     <div class="mb-3">

@@ -31,29 +31,34 @@ class ComicCrudController extends Controller
      */
     public function store(Request $request)
     {
-        $comic = new Comic();
 
-            $comic->title = $request->input('title');
-            $comic->description = $request->input('description');
-            $comic->thumb = $request->input('thumb');
-            $comic->price = $request->input('price');
-            $comic->series = $request->input('series');
-            $comic->sale_date = $request->input('sale_date');
-            $comic->type = $request->input('type');
 
-            // $new_comic->fill($form_data);
+            // $new_comic->title = $request->input('title');
+            // $new_comic->description = $request->input('description');
+            // $new_comic->thumb = $request->input('thumb');
+            // $new_comic->price = $request->input('price');
+            // $new_comic->series = $request->input('series');
+            // $new_comic->sale_date = $request->input('sale_date');
+            // $new_comic->type = $request->input('type');
 
-        $comic->save();
+            $form_data= $request->all();
 
+        $new_comic = new Comic();
+
+            $new_comic->fill($form_data);
+
+        $new_comic->save();
+        
         return redirect()->route('comics.show', ['comic' => $new_comic->id]);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Comic $comic)
     {
-        $comic = Comic::findOrFail($id);
+        // $comic = Comic::findOrFail($id);
+
         return view('pages.ComicsViews.show', compact('comic'));
     }
 
