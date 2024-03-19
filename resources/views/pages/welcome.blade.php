@@ -4,7 +4,8 @@
 
 @section('main')
     <main>
-        <a href="{{route('comics.index')}}"></a>
+        {{-- <a href="{{route('comics.index')}}"></a> --}}
     </main>
 
+    
 @endsection

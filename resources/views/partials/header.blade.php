@@ -6,7 +6,7 @@
                     DC POWER VISA ®
                 </p>
             </div>
-            <div class="col-1">
+            <div class="col-2">
                 <p class="text-light p-1 fw-bold">
                     ADDITIONAL DC SITES
                     <i class="fa-solid fa-caret-down"></i>
@@ -16,7 +16,7 @@
     </div>
 
 
-    <div class="container d-flex justify-content-around mt-4 align-items-center">
+    <div class="container d-flex justify-content-around mt-4 align-items-center ">
     <figure id="header-logo">
         <a href="#">
           <img src="{{ Vite::asset('resources/images/dc-logo.png') }}" alt="Dc Logo">
@@ -64,58 +64,4 @@
 </header>
 
 
-<style>
 
-/**************
-*  HEADER CSS *
-***************/
-
-html, body{
-    font-family: "PT Sans Narrow", sans-serif;
-    background-color: #1c1c1c;
-}
-
-header{
-    background-color: #ffffff;
-}
-
-#visa-header{
-    height: 50px;
-    background-color: #0C7CEC;
-}
-
-.input-container {
-    position: relative;
-    margin-bottom: 20px;
-}
-
-input[type="text"] {
-    border: none;
-    border-bottom: 1px solid transparent;
-    outline: none;
-    padding-right: 30px;
-}
-
-input[type="text"]:focus {
-    border-bottom: 2px solid #0282f9;
-}
-
-.search-icon {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    color: #666;
-    cursor: pointer;
-}
-
-#header-nav a{
-    padding-block: 40px;
-}
-
-#header-nav a:hover{
-    color: #0282f9;
-    border-bottom: 5px solid #0282f9;
-}
-
-</style>

@@ -23,7 +23,7 @@ class ComicCrudController extends Controller
      */
     public function create()
     {
-        return view('backend.comics.create');
+        return view('pages.comics.create');
     }
 
     /**
@@ -41,9 +41,11 @@ class ComicCrudController extends Controller
             $comic->sale_date = $request->input('sale_date');
             $comic->type = $request->input('type');
 
+            // $new_comic->fill($form_data);
+
         $comic->save();
 
-        return redirect()->route('comics.index')->with('success', 'Comic created successfully.');
+        return redirect()->route('comics.show', ['comic' => $new_comic->id]);
     }
 
     /**
