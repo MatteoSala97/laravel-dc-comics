@@ -32,23 +32,11 @@ class ComicCrudController extends Controller
     public function store(Request $request)
     {
 
-
-            // $new_comic->title = $request->input('title');
-            // $new_comic->description = $request->input('description');
-            // $new_comic->thumb = $request->input('thumb');
-            // $new_comic->price = $request->input('price');
-            // $new_comic->series = $request->input('series');
-            // $new_comic->sale_date = $request->input('sale_date');
-            // $new_comic->type = $request->input('type');
-
-            $form_data= $request->all();
-
+        $form_data= $request->all();
         $new_comic = new Comic();
-
-            $new_comic->fill($form_data);
-
+        $new_comic->fill($form_data);
         $new_comic->save();
-        
+
         return redirect()->route('comics.show', ['comic' => $new_comic->id]);
     }
 
@@ -67,7 +55,7 @@ class ComicCrudController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        return view('pages.ComicsViews.edit', compact('comic'));
     }
 
     /**
