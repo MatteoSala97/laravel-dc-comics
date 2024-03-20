@@ -48,9 +48,9 @@
                     <p class="text-lignt fw-bold">Price: {{ $element->price }} $</p>
                 </div>
                 <div class="d-flex justify-content-center gap-3 ">
-                    <button type="button"class="btn btn-primary">
+                    <a href="{{route('comics.edit', $element->id)}}" type="button"class="btn btn-primary">
                         Edit
-                    </button>
+                    </a>
                     <form action="{{route('comics.destroy', $element->id)}}"
                         method="POST">
                         @csrf
