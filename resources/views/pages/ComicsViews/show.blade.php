@@ -9,7 +9,7 @@
             <img src="{{$comic->thumb}}" alt="{{$comic->title}}" style="width: 600px; height:800px" class="p-5">
             <div class="mt-5 w-50">
                 <h1 class="">{{$comic->title}}</h1>
-                <h5 class="">{{$comic->price}}</h5>
+                <h5 class="">{{$comic->price}} $</h5>
                 <br>
                 <p class="">{{$comic->description}}</p>
                 <p class="fw-bold">Series: {{$comic->series}}</p>

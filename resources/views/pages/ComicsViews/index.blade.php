@@ -43,9 +43,23 @@
                 <a href="{{ route('comics.show', $element->id) }}">
                     <img class="card-img-top" src="{{$element->thumb}}" alt="{{$element->title}}"/>
                 </a>
-                <div class="card-info">
+                <div class="card-info text-center">
                     <h2 class="text-lignt fw-bold">{{$element->title}}</h2>
-                    <p class="text-lignt fw-bold">Price: {{ $element->price }}</p>
+                    <p class="text-lignt fw-bold">Price: {{ $element->price }} $</p>
+                </div>
+                <div class="d-flex justify-content-center gap-3 ">
+                    <button type="button"class="btn btn-primary">
+                        Edit
+                    </button>
+                    <form action="{{route('comics.destroy', $element->id)}}"
+                        method="POST">
+                        @csrf
+                        @method('DELETE')
+
+                        <button type="submit" class="btn btn-danger">
+                            Delete
+                        </button>
+                    </form>
                 </div>
             </div>
             @endforeach
@@ -53,7 +67,7 @@
 
         </div>
 
-        <a id="create-more" class="text-decoration-none" href="{{ route('comics.create') }}">Create a new comic</a>
+        <a id="" class="text-decoration-none create-more" href="{{ route('comics.create') }}">Create a new comic</a>
     </main>
 
 
