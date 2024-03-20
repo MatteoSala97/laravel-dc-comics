@@ -14,7 +14,8 @@ class ComicCrudController extends Controller
      */
     public function index()
     {
-        $comics = Comic::all();
+
+        $comics = Comic::all(); //SELECT * FROM COMIC
         return view('pages.ComicsViews.index', compact('comics'));
     }
 

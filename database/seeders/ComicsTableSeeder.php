@@ -16,6 +16,7 @@ class ComicsTableSeeder extends Seeder
         // $comicsData = include(resource_path('data/comics.php'));
 
         foreach($comics as $item){
+            
             $newComic = new Comic();
 
             $newComic->id = $item['id'];

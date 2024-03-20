@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Dc Comics | Home')
+@section('title', 'Dc Comics | Home') {{-- @section('title', 'Dc Comics | SEZIONE') --}}
 
 @section('main')
     <main>
@@ -14,6 +14,4 @@
             </h5>
         </div>
     </main>
-
-
 @endsection
