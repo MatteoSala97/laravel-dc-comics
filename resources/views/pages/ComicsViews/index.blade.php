@@ -20,6 +20,7 @@
                     <a href="{{route('comics.edit', $element->id)}}" type="button"class="btn btn-primary">
                         Edit
                     </a>
+                    
                     <form action="{{route('comics.destroy', $element->id)}}"
                         method="POST">
                         @csrf

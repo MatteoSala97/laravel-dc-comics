@@ -33,7 +33,21 @@ class ComicCrudController extends Controller
     public function store(Request $request)
     {
 
-        $form_data= $request->all();
+        // $form_data= $request->all();
+
+        $request->validate([
+            'title' => 'required| max:255',
+            'description' => 'required| max:8192',
+            'type' => 'required| max:255',
+            'thumb' => 'required| max:255',
+            'price' => 'required| max:255',
+            'sale_date' => 'required| max:255',
+            'series' => 'required| max:255',
+
+        ]);
+
+
+
         $new_comic = new Comic();
         $new_comic->fill($form_data);
         $new_comic->save();
